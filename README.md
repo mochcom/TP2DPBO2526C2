@@ -70,11 +70,11 @@ Hierarki kelas dirancang menggunakan **Multi-Level Inheritance (Turunan 3 Level)
 
 1. **`Minuman` extends `Menu`**: 
    * **Generalisasi**: Sebuah toko dapat menjual berbagai tipe menu (seperti makanan, minuman, atau *merchandise*). Kelas `Menu` berperan sebagai entitas dasar abstrak teratas yang menyimpan entitas paling umum yang pasti dimiliki oleh semua barang yang dijual, yaitu ID, Nama, dan Harga.
-   * **Spesialisasi**: `Minuman` adalah salah satu kategori khusus (*Is-A*) dari `Menu`. Oleh karena itu, `Minuman` mewarisi properti dasar `Menu` dan menambahkan atribut spesifik yang hanya relevan untuk produk cairan/minuman, seperti takaran volume (`volumeMl`), kadar gula (`tingkatManis`), dan kondisi penyajian (`suhuSajian`).
+   * **Spesialisasi**: `Minuman` adalah salah satu kategori khusus (*Is-A*) dari `Menu`. Oleh karena itu, `Minuman` mewarisi properti dasar `Menu` dan menambahkan atribut spesifik yang hanya relevan untuk produk cairan/minuman, seperti takaran volume (`volume_ml`), kadar gula (`tingkat_manis`), dan kondisi penyajian (`suhu_sajian`).
 
 2. **`Kopi` extends `Minuman`**: 
    * **Spesialisasi Tingkat Lanjut**: `Kopi` merupakan turunan lebih spesifik (*Is-A*) dari kelas `Minuman`. Kopi pasti memiliki seluruh sifat dasar minuman (memiliki volume, suhu, dan rasa manis) sekaligus atribut dasar menu (ID, nama, harga).
-   * **Atribut Spesifik Kopi**: Kelas `Kopi` menambahkan parameter esensial khusus racikan kopi yang tidak dimiliki oleh minuman non-kopi lainnya (seperti air mineral atau jus), yakni varietas bahan baku (`jenisBijiKopi`), teknik ekstraksi (`metodeSeduh`), serta zat stimulan (`kadarKafeinMg`).
+   * **Atribut Spesifik Kopi**: Kelas `Kopi` menambahkan parameter esensial khusus racikan kopi yang tidak dimiliki oleh minuman non-kopi lainnya (seperti air mineral atau jus), yakni varietas bahan baku (`jenis_biji_kopi`), teknik ekstraksi (`metode_seduh`), serta zat stimulan (`kadar_kafein_mg`).
 
 Dengan struktur *extends* ini, terbentuk penulisan kode yang efisien (*code reusability*), mencegah redundansi deklarasi variabel, serta memastikan enkapsulasi data terorganisir dengan rapi.
 
@@ -89,7 +89,7 @@ Dengan struktur *extends* ini, terbentuk penulisan kode yang efisien (*code reus
 
 ### 2. Alur Program PHP (Web Display)
 1. **Pemuatan Class & Instansiasi**: File `main.php` memuat dependensi kelas (`Kopi.php` beserta parent-nya) dan menginstansiasi array dari beberapa objek `Kopi`.
-2. **Pemeriksaan File Gambar (`foto_menu`)**: Program mengakses nilai atribut `fotoMenu` via method `getFotoMenu()`. Sistem memeriksa ketersediaan file gambar berformat `image/foto_[nama_menu].jpg` menggunakan pustaka internal `file_exists()`. Jika file lokal tidak ditemukan, sistem akan memuat gambar *placeholder fallback*.
+2. **Pemeriksaan File Gambar (`foto_menu`)**: Program mengakses nilai atribut `foto_menu` via method `getFotoMenu()`. Sistem memeriksa ketersediaan file gambar berformat `image/foto_[nama_menu].jpg` menggunakan pustaka internal `file_exists()`. Jika file lokal tidak ditemukan, sistem akan memuat gambar *placeholder fallback*.
 3. **Penyajian Data (Render Layout)**: Data dieksekusi menggunakan perulangan `foreach` untuk membentuk baris-baris tabel HTML. Berkas eksternal `style.css` memberikan penataan tata letak (*layouting*), warna tema *coffee warm*, lencana (*badge*) indikator suhu, serta keseragaman ukuran tampilan gambar produk (*aspect ratio* 1:1 / `object-fit: cover`).
 
 ---
