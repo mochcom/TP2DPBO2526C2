@@ -23,10 +23,10 @@ Arsitektur sistem dibangun atas 3 tingkatan kelas utama:
 
 ### 1. Class `Menu` (Base Class)
 * **Atribut:**
-  * `idMenu` (`string` / `protected`): ID unik identifikasi produk (contoh: `KOP01`).
-  * `namaMenu` (`string` / `protected`): Nama varian menu.
-  * `hargaMenu` (`double` / `protected`): Harga jual menu dalam Rupiah.
-  * `fotoMenu` (`string` / `protected` — **Khusus PHP**): Path/lokasi file gambar produk (contoh: `image/foto_espresso_single.jpg`).
+  * `id_menu` (`string` / `protected`): ID unik identifikasi produk (contoh: `KOP01`).
+  * `nama_menu` (`string` / `protected`): Nama varian menu.
+  * `harga_menu` (`double` / `protected`): Harga jual menu dalam Rupiah.
+  * `foto_menu` (`string` / `protected` — **Khusus PHP**): Path/lokasi file gambar produk (contoh: `image/foto_espresso_single.jpg`).
 
 * **Method:**
   * `__construct(...)` / `Menu(...)`: Setter nilai awal properti saat instansiasi objek.
@@ -37,9 +37,9 @@ Arsitektur sistem dibangun atas 3 tingkatan kelas utama:
 
 ### 2. Class `Minuman` (Inherits `Menu`)
 * **Atribut:**
-  * `volumeMl` (`int` / `protected`): Takaran volume minuman dalam mililiter (ml).
-  * `tingkatManis` (`string` / `protected`): Opsi kadar gula (`None`, `Less Sugar`, `Normal`).
-  * `suhuSajian` (`string` / `protected`): Temperature penyajian (`Panas`, `Dingin`).
+  * `volume_ml` (`int` / `protected`): Takaran volume minuman dalam mililiter (ml).
+  * `tingkat_manis` (`string` / `protected`): Opsi kadar gula (`None`, `Less Sugar`, `Normal`).
+  * `suhu_sajian` (`string` / `protected`): Temperature penyajian (`Panas`, `Dingin`).
 
 * **Method:**
   * `__construct(...)` / `Minuman(...)`: Constructor berantai yang memanggil `parent::__construct()` dari kelas `Menu`.
@@ -49,9 +49,9 @@ Arsitektur sistem dibangun atas 3 tingkatan kelas utama:
 
 ### 3. Class `Kopi` (Inherits `Minuman`)
 * **Atribut:**
-  * `jenisBijiKopi` (`string` / `private`): Varietas biji kopi yang digunakan (`Arabika`, `Robusta`, `Blend`).
-  * `metodeSeduh` (`string` / `private`): Teknik ekstraksi kopi (`Espresso`, `Pour Over`, `Cold Drip`).
-  * `kadarKafeinMg` (`int` / `private`): Estimasi kandungan kafein dalam miligram (mg).
+  * `jenis_biji_kopi` (`string` / `private`): Varietas biji kopi yang digunakan (`Arabika`, `Robusta`, `Blend`).
+  * `metode_seduh` (`string` / `private`): Teknik ekstraksi kopi (`Espresso`, `Pour Over`, `Cold Drip`).
+  * `kadar_kafein_mg` (`int` / `private`): Estimasi kandungan kafein dalam miligram (mg).
 
 * **Method:**
   * `__construct(...)` / `Kopi(...)`: Constructor berantai yang memanggil `parent::__construct()` dari kelas `Minuman`.
@@ -84,12 +84,8 @@ Dengan struktur *extends* ini, terbentuk penulisan kode yang efisien (*code reus
 
 ### 1. Alur Program C++, Java, & Python (CLI Interaktif)
 1. **Inisialisasi Data Awal**: Program pertama kali dieksekusi dengan membentuk *list/array* berisikan beberapa objek `Kopi` awal (data bawaan).
-2. **Looping Menu Interaktif**: Program menampilkan antarmuka *Command Line Interface* (CLI) berulang yang meminta masukan angka opsi dari pengguna:
-   * **Tampilkan Data (Read)**: Program mengiterasi seluruh objek `Kopi` dalam memori dan mencetak seluruh kombinasi atribut (dari `Menu`, `Minuman`, hingga `Kopi`) dalam bentuk tabel terstruktur.
-   * **Tambah Data (Create)**: Program menerima masukan teks dan angka secara berurutan untuk setiap atribut, lalu menginstansiasi objek `Kopi` baru menggunakan constructor berantai dan memasukkannya ke dalam list.
-   * **Ubah Data (Update)**: Program meminta ID target, mencocokkan ID pada list, lalu memperbarui nilai atribut objek tersebut sesuai inputan baru dari user.
-   * **Hapus Data (Delete)**: Program meminta ID target, mencari posisi indeks objek, lalu menghapusnya dari daftar memori.
-   * **Keluar**: Menghentikan perulangan eksekusi program.
+2. **Tambah Data**: Program menerima masukan teks dan angka secara berurutan untuk setiap atribut, lalu menginstansiasi objek `Kopi` baru menggunakan constructor berantai dan memasukkannya ke dalam list.
+3. **Lanjutkan**: Program menerima masukan y untuk lanjut dan n untuk tidak lanjut menambah data.
 
 ### 2. Alur Program PHP (Web Display)
 1. **Pemuatan Class & Instansiasi**: File `main.php` memuat dependensi kelas (`Kopi.php` beserta parent-nya) dan menginstansiasi array dari beberapa objek `Kopi`.
@@ -111,13 +107,13 @@ Berikut adalah dokumentasi tangkapan layar eksekusi program pada masing-masing b
 ### 2. Dokumentasi Java (`Dokumentasi/java/`)
 * **Screenshot 1 — Tampilan Katalog Data**:  
   ![Java Output 1](Dokumentasi/java/ss1.png)
-* **Screenshot 2 — Eksekusi Input User**:  
+* **Screenshot 2 — Input User**:  
   ![Java Output 2](Dokumentasi/java/ss2.png)
 
 ### 3. Dokumentasi Python (`Dokumentasi/python/`)
 * **Screenshot 1 — Menu & Daftar Katalog**:  
   ![Python Output 1](Dokumentasi/python/ss1.png)
-* **Screenshot 2 — Manipulasi Data CLI**:  
+* **Screenshot 2 — Input User**:  
   ![Python Output 2](Dokumentasi/python/ss2.png)
 
 ### 4. Dokumentasi PHP (`Dokumentasi/php/`)
