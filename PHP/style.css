@@ -1,0 +1,197 @@
+/* ==========================================================================
+   CSS Reset & Definisi Variabel Warna / Tema Utama
+   ========================================================================== */
+:root {
+    --bg-color: #FDFBF7;      /* Warna latar belakang halaman (Warm Cream) */
+    --card-bg: #FFFFFF;       /* Warna latar belakang kartu/tabel */
+    --primary-dark: #2C1810;  /* Warna gelap utama untuk teks/header (Coffee Dark) */
+    --accent-warm: #C87D55;   /* Warna aksen hangat untuk harga/dekorasi */
+    --accent-soft: #EADBC8;   /* Warna aksen lembut untuk badge ID */
+    --text-main: #3E2723;     /* Warna teks utama */
+    --text-muted: #795548;    /* Warna teks sekunder/deskripsi */
+    --border-color: #F0E6D2;  /* Warna garis tepi/border */
+    --shadow-soft: 0 10px 30px rgba(44, 24, 16, 0.06); /* Efek bayangan halus */
+}
+
+/* Reset margin, padding, dan box sizing untuk seluruh elemen HTML */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Penataan tampilan utama pada elemen body */
+body {
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins */
+    background-color: var(--bg-color); /* Menerapkan warna latar belakang */
+    color: var(--text-main);           /* Warna teks utama */
+    padding: 40px 20px;                /* Jarak ruang di sekeliling halaman */
+    display: flex;                     /* Menggunakan layout flexbox */
+    justify-content: center;           /* Memposisikan konten di tengah secara horizontal */
+}
+
+/* Pembungkus utama untuk membatasi lebar maksimal konten */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Maksimal lebar container 1200px */
+}
+
+/* ==========================================================================
+   Gaya Bagian Header
+   ========================================================================== */
+header {
+    text-align: center;   /* Mengatur teks header ke tengah */
+    margin-bottom: 40px;  /* Jarak antara header dan tabel */
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif; /* Font elegan untuk judul utama */
+    font-size: 2.5rem;                       /* Ukuran font judul */
+    color: var(--primary-dark);              /* Warna teks judul */
+    margin-bottom: 8px;                      /* Jarak bawah judul */
+}
+
+header p {
+    color: var(--text-muted); /* Warna teks deskripsi sub-header */
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* Garis dekoratif kecil di bawah deskripsi header */
+.header-divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-warm);
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   Gaya Tabel & Wadah Kartu
+   ========================================================================== */
+.table-card {
+    background: var(--card-bg);    /* Latar belakang putih */
+    border-radius: 16px;           /* Sudut membulat pada kartu */
+    box-shadow: var(--shadow-soft); /* Bayangan lembut */
+    border: 1px solid var(--border-color); /* Garis tepi tipis */
+    overflow: hidden;              /* Menjaga elemen anak tidak keluar dari border-radius */
+}
+
+/* Wadah responsif agar tabel bisa di-scroll pada layar kecil */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; /* Memungkinkan horizontal scroll di perangkat seluler */
+}
+
+/* Elemen Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Menggabungkan border antar sel */
+    text-align: left;
+    font-size: 0.92rem;
+}
+
+/* Bagian Header Tabel */
+thead {
+    background-color: var(--primary-dark); /* Latar belakang cokelat gelap */
+    color: #FFFFFF;                       /* Teks warna putih */
+}
+
+th {
+    padding: 16px 20px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase; /* Mengubah teks header tabel menjadi huruf kapital */
+    letter-spacing: 0.8px;
+    white-space: nowrap;       /* Mencegah teks header terpotong baris baru */
+}
+
+/* Baris Tabel pada Body */
+tbody tr {
+    border-bottom: 1px solid var(--border-color); /* Garis pembatas antar baris */
+    transition: background-color 0.2s ease;       /* Efek transisi halus saat hover */
+}
+
+tbody tr:last-child {
+    border-bottom: none; /* Menghilangkan garis pembatas pada baris terakhir */
+}
+
+tbody tr:hover {
+    background-color: #FAF6F0; /* Warna latar berubah saat kursor diarahkan ke baris */
+}
+
+td {
+    padding: 16px 20px;
+    vertical-align: middle; /* Memposisikan konten di tengah secara vertikal */
+    color: var(--text-main);
+}
+
+/* ==========================================================================
+   Gaya Elemen Khusus di Dalam Sel Tabel
+   ========================================================================== */
+
+/* Badge untuk ID Menu */
+.badge-id {
+    background-color: var(--accent-soft);
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Nama Menu */
+.menu-title {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+/* Teks Harga */
+.price {
+    font-weight: 600;
+    color: var(--accent-warm);
+}
+
+/* Elemen Foto Produk (Menyeragamkan Ukuran Gambar) */
+.product-img {
+    width: 70px;            /* Lebar tetap */
+    min-width: 70px;        /* Mencegah gambar menyusut */
+    height: 70px;           /* Tinggi tetap (rasio 1:1 / persegi) */
+    object-fit: cover;      /* Memastikan gambar terpotong rapi tanpa distorsi/gepeng */
+    object-position: center;/* Memposisikan fokus gambar di tengah */
+    border-radius: 10px;    /* Sudut gambar membulat */
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: block;
+}
+
+/* Tag Suhu Penyajian */
+.tag-temp {
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* Tag untuk Minuman Panas */
+.tag-panas {
+    background-color: #FDE8E8;
+    color: #E53E3E;
+}
+
+/* Tag untuk Minuman Dingin */
+.tag-dingin {
+    background-color: #EBF8FF;
+    color: #3182CE;
+}
+
+/* ==========================================================================
+   Gaya Footer
+   ========================================================================== */
+footer {
+    margin-top: 25px;
+    text-align: right;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}

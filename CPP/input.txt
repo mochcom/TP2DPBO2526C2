@@ -1,0 +1,23 @@
+KOP01
+KOP06
+Matcha Latte
+dua puluh ribu
+30000
+seratus
+250
+Normal
+Dingin
+Arabika
+Espresso
+80
+y
+KOP07
+Caramel Macchiato
+35000
+350
+Less Sugar
+Panas
+Robusta
+Espresso
+95
+n
