@@ -1,5 +1,5 @@
 # TP2DPBO2526C2
-# Janji Kejujuran Akademik
+# Janji 
 
 Saya Moch Fadillah Pratama dengan NIM 2506968 mengerjakan Tugas Praktikum 2 dalam mata kuliah Desain dan Pemrograman Berbasis Objek untuk keberkahan-Nya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.
 
@@ -11,6 +11,66 @@ Saya Moch Fadillah Pratama dengan NIM 2506968 mengerjakan Tugas Praktikum 2 dala
 Proyek ini merupakan sistem informasi katalog menu minuman berbasis Object-Oriented Programming (OOP) yang mengimplementasikan konsep Multi-Level Inheritance (Turunan Bertingkat 3 Level). Sistem ini dirancang untuk mengelola dan menyajikan spesifikasi rinci varian produk kopi pada coffee shop Kopi Studio, mencakup data dasar menu, parameter racikan minuman, hingga rincian biji kopi dan kadar kafein.
 
 Sistem dikembangkan dalam 4 bahasa pemrograman (`C++`, `Java`, `Python`, dan `PHP`) untuk memperlihatkan fleksibilitas penerapan arsitektur kelas berhierarki dan enkapsulasi pada berbagai paradigma runtime.
+
+---
+## Struktur Direktori
+'''text
+TP2DPBO2526C2
+|   README.md
+|
++---CPP
+|       input.txt
+|       Kopi.cpp
+|       main.cpp
+|       Menu.cpp
+|       Minuman.cpp
+|
++---Dokumentasi
+|   |   diagram.png
+|   |
+|   +---cpp
+|   |       ss1.png
+|   |       ss2.png
+|   |
+|   +---java
+|   |       ss1.png
+|   |       ss2.png
+|   |
+|   +---php
+|   |       ss1.png
+|   |
+|   \---python
+|           ss1.png
+|           ss2.png
+|
++---Java
+|       input.txt
+|       Kopi.java
+|       Main.java
+|       Menu.java
+|       Minuman.java
+|
++---PHP
+|   |   Kopi.php
+|   |   main.php
+|   |   Menu.php
+|   |   Minuman.php
+|   |   style.css
+|   |
+|   \---image
+|           foto_caffe_latte.jpg
+|           foto_cold_brew_float.jpg
+|           foto_espresso_single.jpg
+|           foto_iced_americano.jpg
+|           foto_v60_manual_brew.jpg
+|
+\---Python
+        input.txt
+        Kopi.py
+        main.py
+        Menu.py
+        Minuman.py
+'''
 
 ---
 
